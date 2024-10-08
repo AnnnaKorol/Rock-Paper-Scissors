@@ -77,7 +77,7 @@ if(humanScore > computerScore) {
 } else if (humanScore < computerScore) {
   console.log(`Sorry, you lost the game. Final score: Human ${humanScore} - Computer ${computerScore}`);
 } else {
-  console.log(` The game us a tie! Final score: Human ${humanScore} - Computer ${computerScore}`);
+  console.log(` The game is a tie! Final score: Human ${humanScore} - Computer ${computerScore}`);
 }
 }
 
