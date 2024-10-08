@@ -9,3 +9,10 @@ How this game was built:
 3) Create one round of the game, which will provide a single result for the first round and the remaining 4 rounds;
 4) Create a function to calculate total score for human and computer;
 5) Create a function to compare the total points of the human and computer after 5 rounds to see who is the winner.
+
+
+
+Styling console.log with emoji and colors:
+https://www.npmjs.com/package/emoji-picker-react
+https://dreamyguy.github.io/react-emojis/
+https://www.bennadel.com/blog/3941-styling-console-log-output-formatting-with-css.htm
