@@ -1,11 +1,11 @@
 # Rock-Paper-Scissors-:
 
-This is a short instruction how you can play the game "ROCK-PAPER-SCISSORS". When you see a dialog window, you should provide your beat answer(rock, paper or scissors) and then click "OK" to see the result in the console.log of your browser. You will see also what round it is. You can try your lucky 5 times and at the end you will see the winner of this game: you or computer. 
+This is a brief instruction on how to play the game “ROCK-PAPER-SCISSORS”. When you see the dialog box, you must specify your answer (rock, paper or scissors) and then click “OK” to see the result in your browser's console.log. You will also see what round it is now. You can try your luck 5 times, and at the end you will see the winner of this game: you or the computer.
 
 
 How this game was built:
-1) Create a  computer choice function based on Math.random() and convert the answer to the value (1,2,3);
-2) Create a human function and make sure that you adjust the answer (e.g. "RoCk" );
-3) Create a single round of the game where a single result of the first and other 4 rounds will be provided;
-4) Create a function to calculate the total score for human and computer;
-5) Create a function to compare the total score of the human and computer after 5 round to know who is a winner. 
+1) Create a computer selection function based on Math.random() and convert the answer to the value (1,2,3);
+2) Create a human selection function and be sure to correct the answer (e.g., “RoCk”);
+3) Create one round of the game, which will provide a single result for the first round and the remaining 4 rounds;
+4) Create a function to calculate total score for human and computer;
+5) Create a function to compare the total points of the human and computer after 5 rounds to see who is the winner.
