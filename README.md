@@ -16,3 +16,4 @@ Styling console.log with emoji and colors:
 https://www.npmjs.com/package/emoji-picker-react
 https://dreamyguy.github.io/react-emojis/
 https://www.bennadel.com/blog/3941-styling-console-log-output-formatting-with-css.htm
+https://gist.githubusercontent.com/ikr7/c72843556ef3a12014c3/raw/0e92d5167aaf6c75da57591269077a35234a036b/random-emoji.js
