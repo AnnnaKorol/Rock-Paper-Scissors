@@ -92,15 +92,24 @@ function playGame() {
   //Calculate the score and provide the winner
   if (humanScore > computerScore) {
     console.log(
-      `Congratulation🎉!You won the game.Final score: Human ${humanScore} - Computer ${computerScore}`
+      `%cCongratulation🎉!You won the game. \n\n Final score: Human ${humanScore} - Computer ${computerScore}`,
+      "background-color: Yellow ; color: white ; font-weight: bold ; " +
+        "font-size: 20px ; font-style: italic ; text-decoration: underline ; " +
+        "font-family: 'american typewriter' ; text-shadow: 1px 1px 3px black ;"
     );
   } else if (humanScore < computerScore) {
     console.log(
-      `Sorry😟, you lost the game. Final score: Human ${humanScore} - Computer ${computerScore}`
+      `%cSorry😟, you lost the game. \n\n Final score: Human ${humanScore} - Computer ${computerScore}`,
+      "background-color: Tomato; color: white ; font-weight: bold ; " +
+        "font-size: 20px ; font-style: italic ; text-decoration: underline ; " +
+        "font-family: 'american typewriter' ; text-shadow: 1px 1px 3px black ;"
     );
   } else {
     console.log(
-      ` The game is a tie🤝! Final score: Human ${humanScore} - Computer ${computerScore}`
+      `%cThe game is a tie🤝! \n\n Final score: Human ${humanScore} - Computer ${computerScore}`,
+      "background-color: Blue ; color: white ; font-weight: bold ; " +
+        "font-size: 20px ; font-style: italic ; text-decoration: underline ; " +
+        "font-family: 'american typewriter' ; text-shadow: 1px 1px 3px black ;"
     );
   }
 }
