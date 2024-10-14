@@ -11,6 +11,7 @@ function getComputerChoice(choice) {
 }
 //console.log(getComputerChoice());
 
+
 //Human choice
 function getHumanChoice() {
   let humanChoice = prompt(
@@ -28,6 +29,15 @@ function getHumanChoice() {
   return humanChoice;
 }
 //console.log(getHumanChoice());
+
+
+
+
+
+
+
+
+
 
 //Play single round
 function playRound(humanChoice, computerChoice) {
@@ -65,56 +75,80 @@ function playRound(humanChoice, computerChoice) {
 }
 //console.log(playRound());
 
+
+
+
+
+//!Different logic of playing the 5 rounds:
+const rockBtn = document.querySelector("#rockBtn");
+const scissorsBtn = document.querySelector("#scissorsBtn");
+const paperBtn = document.querySelector("#paperBtn");
+
+
+rockBtn.addEventListener("click", () => playRound("rock"));
+scissorsBtn.addEventListener("click", () => playRound("scissors"));
+paperBtn.addEventListener("click", () => playRound("paper"));
+
+
+
+
+
+
+
+
+
+
 //Play game with added Scores for computer and human
-function playGame() {
-  let humanScore = 0;
-  let computerScore = 0;
+// function playGame() {
+//   let humanScore = 0;
+//   let computerScore = 0;
 
-  for (let round = 1; round <= 5; round++) {
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    const result = playRound(humanSelection, computerSelection);
-    console.log(`Round ${round}`);
+//   for (let round = 1; round <= 5; round++) {
+//     const humanSelection = getHumanChoice();
+//     const computerSelection = getComputerChoice();
+//     const result = playRound(humanSelection, computerSelection);
+//     console.log(`Round ${round}`);
 
-    if (result === "human") {
-      humanScore++;
-    } else if (result === "computer") {
-      computerScore++;
-    }
-    console.log(
-      `Score after round ${round}: Human ${humanScore}, Computer ${computerScore}`
-    );
-    console.log(
-      "*****************************************************************************"
-    );
-  }
+//     if (result === "human") {
+//       humanScore++;
+//     } else if (result === "computer") {
+//       computerScore++;
+//     }
+//     console.log(
+//       `Score after round ${round}: Human ${humanScore}, Computer ${computerScore}`
+//     );
+//     console.log(
+//       "*****************************************************************************"
+//     );
+//   }
 
-  //Calculate the score and provide the winner
-  if (humanScore > computerScore) {
-    console.log(
-      `%cCongratulation🎉!You won the game. \n\n Final score: Human ${humanScore} - Computer ${computerScore}`,
-      "background-color: Yellow ; color: white ; font-weight: bold ; " +
-        "font-size: 20px ; font-style: italic ; text-decoration: underline ; " +
-        "font-family: 'american typewriter' ; text-shadow: 1px 1px 3px black ;"
-    );
-  } else if (humanScore < computerScore) {
-    console.log(
-      `%cSorry😟, you lost the game. \n\n Final score: Human ${humanScore} - Computer ${computerScore}`,
-      "background-color: Tomato; color: white ; font-weight: bold ; " +
-        "font-size: 20px ; font-style: italic ; text-decoration: underline ; " +
-        "font-family: 'american typewriter' ; text-shadow: 1px 1px 3px black ;"
-    );
-  } else {
-    console.log(
-      `%cThe game is a tie🤝! \n\n Final score: Human ${humanScore} - Computer ${computerScore}`,
-      "background-color: Blue ; color: white ; font-weight: bold ; " +
-        "font-size: 20px ; font-style: italic ; text-decoration: underline ; " +
-        "font-family: 'american typewriter' ; text-shadow: 1px 1px 3px black ;"
-    );
-  }
-}
+  
+//   //Calculate the score and provide the winner
+//   if (humanScore > computerScore) {
+//     console.log(
+//       `%cCongratulation🎉!You won the game. \n\n Final score: Human ${humanScore} - Computer ${computerScore}`,
+//       "background-color: Yellow ; color: white ; font-weight: bold ; " +
+//         "font-size: 20px ; font-style: italic ; text-decoration: underline ; " +
+//         "font-family: 'american typewriter' ; text-shadow: 1px 1px 3px black ;"
+//     );
+//   } else if (humanScore < computerScore) {
+//     console.log(
+//       `%cSorry😟, you lost the game. \n\n Final score: Human ${humanScore} - Computer ${computerScore}`,
+//       "background-color: Tomato; color: white ; font-weight: bold ; " +
+//         "font-size: 20px ; font-style: italic ; text-decoration: underline ; " +
+//         "font-family: 'american typewriter' ; text-shadow: 1px 1px 3px black ;"
+//     );
+//   } else {
+//     console.log(
+//       `%cThe game is a tie🤝! \n\n Final score: Human ${humanScore} - Computer ${computerScore}`,
+//       "background-color: Blue ; color: white ; font-weight: bold ; " +
+//         "font-size: 20px ; font-style: italic ; text-decoration: underline ; " +
+//         "font-family: 'american typewriter' ; text-shadow: 1px 1px 3px black ;"
+//     );
+//   }
+// }
 
-playGame();
+// playGame();
 
 //1) Computer provide a random number that is the value to display: rock =1, scissors=2, paper=3
 //2) Human provide the answer: "rock" "scissors" "paper" and the answer should be checked if "rock" then 1, if scissors then 2, if paper then 3.
