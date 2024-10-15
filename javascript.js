@@ -1,4 +1,3 @@
-
 //!Add buttons to java script:
 const rock = document.querySelector("#rockBtn");
 const scissors = document.querySelector("#scissorsBtn");
@@ -6,11 +5,10 @@ const paper = document.querySelector("#paperBtn");
 
 //!Main container and paragraphs for the results received:
 const containerMain = document.querySelector("#containerMain");
-const choiceBoth = document.createElement("p");                   //Round 1: Human: rock | Computer: rock
-const containerScore = document.createElement("div");             //👥 It’s a tie! 🤝
-const roundPlay = document.createElement("p");                    //Score: Human 0 | Computer 0
-const resultText = document.createElement("p");                   //🎉 Congratulations! You won the game. Final score: Human ${humanScore} | Computer ${computerScore}`;
-
+const choiceBoth = document.createElement("p"); //Round 1: Human: rock | Computer: rock
+const containerScore = document.createElement("div"); //👥 It’s a tie! 🤝
+const roundPlay = document.createElement("p"); //Score: Human 0 | Computer 0
+const resultText = document.createElement("p"); //🎉 Congratulations! You won the game. Final score: Human ${humanScore} | Computer ${computerScore}`;
 
 let humanScore = 0;
 let computerScore = 0;
@@ -29,146 +27,67 @@ function getComputerChoice() {
   }
 }
 
-
 rock.addEventListener("click", () => playRound("rock"));
 scissors.addEventListener("click", () => playRound("scissors"));
 paper.addEventListener("click", () => playRound("paper"));
 
 
 
-
-
 // Play a single round
 function playRound(humanChoice) {
-  if (currentRound > totalRounds) {
-      return;  // Game over, no more rounds to play
+  if (currentRound >= totalRounds+1) {
+    return; // Game over, no more rounds to play
   }
 
   const computerChoice = getComputerChoice();
 
   choiceBoth.textContent = `Round ${currentRound}: Human: ${humanChoice} | Computer: ${computerChoice}`;
 
-
   if (humanChoice === computerChoice) {
-      containerScore.textContent = "👥 It’s a tie! 🤝";
+    containerScore.textContent = "👥 It’s a tie! 🤝";
   } else if (
-      (humanChoice === "scissors" && computerChoice === "paper") ||
-      (humanChoice === "paper" && computerChoice === "rock") ||
-      (humanChoice === "rock" && computerChoice === "scissors")
+    (humanChoice === "scissors" && computerChoice === "paper") ||
+    (humanChoice === "paper" && computerChoice === "rock") ||
+    (humanChoice === "rock" && computerChoice === "scissors")
   ) {
-      humanScore++;
-      containerScore.textContent = `😀 You win! 🎉 ${humanChoice} beats ${computerChoice}`;
+    humanScore++;
+    containerScore.textContent = `😀 You win! 🎉 ${humanChoice} beats ${computerChoice}`;
   } else {
-      computerScore++;
-      containerScore.textContent = `😣 You lose! ❌ ${computerChoice} beats ${humanChoice}`;
+    computerScore++;
+    containerScore.textContent = `😣 You lose! ❌ ${computerChoice} beats ${humanChoice}`;
   }
 
   roundPlay.textContent = `Score: Human ${humanScore} | Computer ${computerScore}`;
+  currentRound++;
 
-  if (currentRound === totalRounds) {
-      endGame();
-  } else {
-      currentRound++;
-  }
-
-  // Append elements to DOM
-  containerMain.appendChild(choiceBoth);
-  containerMain.appendChild(containerScore);
-  containerMain.appendChild(roundPlay);
-}
+      // Append elements to DOM
+      containerMain.appendChild(choiceBoth);
+      containerMain.appendChild(containerScore);
+      containerMain.appendChild(roundPlay);
+  if (currentRound === totalRounds+1) {
+    endGame();
+  } 
 
 
-
-// End the game and display final result
-function endGame() {
-  if (humanScore > computerScore) {
+  // End the game and display final result
+  function endGame() {
+    if (humanScore > computerScore) {
       resultText.textContent = `🎉 Congratulations! You won the game. Final score: Human ${humanScore} | Computer ${computerScore}`;
-  } else if (humanScore < computerScore) {
+    } else if (humanScore < computerScore) {
       resultText.textContent = `😟 Sorry, you lost the game. Final score: Human ${humanScore} | Computer ${computerScore}`;
-  } else {
+    } else {
       resultText.textContent = `🤝 The game is a tie! Final score: Human ${humanScore} | Computer ${computerScore}`;
+    }
+    containerMain.appendChild(resultText);
   }
-  containerMain.appendChild(resultText);
+    if(currentRound == 2) {
+      const reset = document.createElement("button");
+      const containerChoice = document.querySelector("#containerChoice");
+      containerChoice.appendChild(reset);
+      reset.textContent = "Reset";
+      return reset;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -192,14 +111,12 @@ function endGame() {
 // containerMain.appendChild(roundResult);
 // containerMain.appendChild(resultText);
 
-
 // //Human choice
 //  function getHumanChoice() {
 //   const humanChoice = ['rock', 'scissors', 'paper'];
 //   return humanChoice;
 // }
 // getHumanChoice();
-
 
 // //Computer choice
 // function getComputerChoice() {
@@ -213,7 +130,6 @@ function endGame() {
 //   }
 // }
 // getComputerChoice();
-
 
 // //Human choice
 // // function getHumanChoice() {
@@ -232,12 +148,6 @@ function endGame() {
 // //   return humanChoice;
 // // }
 // //console.log(getHumanChoice());
-
-
-
-
-
-
 
 // // Play single round
 // function playRound(humanChoice, computerChoice) {
@@ -268,7 +178,6 @@ function endGame() {
 //   }
 // }
 // playRound();
-
 
 // // Play single round
 // // function playRound(humanChoice, computerChoice) {
@@ -306,9 +215,6 @@ function endGame() {
 // // }
 // // //console.log(playRound());
 
-
-
-
 // // Play game with added Scores for computer and human
 // function playGame() {
 //   let humanScore = 0;
@@ -332,8 +238,6 @@ function endGame() {
 //     );
 //   }
 
-
-
 //  //Calculate the score and provide the winner
 //  if (humanScore > computerScore) {
 //   resultText.textContent =`Congratulation🎉!You won the game. \n\n Final score: Human ${humanScore} - Computer ${computerScore}`;
@@ -346,43 +250,6 @@ function endGame() {
 // }
 
 // playGame();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // // Play game with added Scores for computer and human
 // function playGame() {
@@ -407,8 +274,6 @@ function endGame() {
 //       "*****************************************************************************"
 //     );
 //   }
-
- 
 
 // //Play game with added Scores for computer and human
 // function playGame() {
@@ -434,10 +299,7 @@ function endGame() {
 //     );
 //   }
 
-
-
-
-  //Calculate the score and provide the winner
+//Calculate the score and provide the winner
 //   if (humanScore > computerScore) {
 //     console.log(
 //       `%cCongratulation🎉!You won the game. \n\n Final score: Human ${humanScore} - Computer ${computerScore}`,
@@ -464,27 +326,6 @@ function endGame() {
 
 // playGame();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //1) Computer provide a random number that is the value to display: rock =1, scissors=2, paper=3
 //2) Human provide the answer: "rock" "scissors" "paper" and the answer should be checked if "rock" then 1, if scissors then 2, if paper then 3.
 //3) If you win! * 5 > you lose! * 5 return
@@ -497,7 +338,5 @@ function endGame() {
 //(humanChoice === "rock" && computerChoice === "paper")
 //)
 //return  computerChoice+=1 &&
-
-
 
 //
